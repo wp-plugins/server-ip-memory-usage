@@ -1,5 +1,5 @@
 === Server IP & Memory Usage Display ===
-Contributors: apasionados, nunsys
+Contributors: apasionados
 Donate link: http://apasionados.es/
 Author URI: http://apasionados.es/
 Tags: memory, memory-limit, ip, ips, admin, adress, php, server, info
