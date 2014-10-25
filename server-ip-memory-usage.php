@@ -3,7 +3,7 @@
 	Plugin Name: Server IP & Memory Usage Display
 	Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=server-ip-memory-usage-plugin
 	Description: Show the memory limit, current memory usage and IP address in the admin footer.
-	Version: 1.0.1
+	Version: 1.0.2
     Author: Apasionados, Apasionados del Marketing, Nunsys
     Author URI: http://apasionados.es
 
@@ -26,7 +26,7 @@
 
 if ( is_admin() ) {	
 
-	class ip_address_memory_usage {
+	class c_ip_address_memory_usage {
 
 		var $memory = false;
 		var $server_ip_address = false;
@@ -67,11 +67,11 @@ if ( is_admin() ) {
 		function add_footer($content) {
 			$this->check_memory_usage();
 			$server_ip_address = $_SERVER[ 'SERVER_ADDR' ];
-			$content .= ' | ' . __( 'Memory', 'server-ip-memory-usage' ) . ': ' . $this->memory['usage'] . ' ' . __( 'of', 'server-ip-memory-usage' ) . ' ' . $this->memory['limit'] . ' MB (<span style="' . $this->memory['color'] . '">' . $this->memory['percent'] . '%</span>) | IP ' . $server_ip_address . ' | PHP ' . PHP_VERSION . ' @' . (PHP_INT_SIZE * 8) . 'BitOS';
+			$content .= ' | ' . __( 'Memory', 'server-ip-memory-usage' ) . ': ' . $this->memory['usage'] . ' ' . __( 'of', 'server-ip-memory-usage' ) . ' ' . $this->memory['limit'] . ' MB (<span style="' . $this->memory['color'] . '">' . $this->memory['percent'] . '%</span>) | IP ' . $server_ip_address . ' | PHP ' . PHP_VERSION .  ' - ' . php_uname('s') . ' @' . (PHP_INT_SIZE * 8) . 'BitOS';
 			return $content;
 		}
 
 	}
 
-	add_action( 'plugins_loaded', create_function('', '$memory = new ip_address_memory_usage();') );
+	add_action( 'plugins_loaded', create_function('', '$memory = new c_ip_address_memory_usage();') );
 }

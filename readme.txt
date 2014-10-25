@@ -1,11 +1,11 @@
 === Server IP & Memory Usage Display ===
-Contributors: apasionados, nunsys
+Contributors: apasionados
 Donate link: http://apasionados.es/
 Author URI: http://apasionados.es/
 Tags: memory, memory-limit, ip, ips, admin, adress, php, server, info
 Requires at least: 3.0.1
-Tested up to: 3.7.0
-Stable tag: 1.0.1
+Tested up to: 4.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,10 @@ Of course we do. That's why we created it. ;-)
 
 == Changelog ==
 
+= 1.0.2 =
+* Included info about Server Operating System
+* Changed class name to c_ip_address_memory_usage to avoid error on some systems: "Redefining already defined constructor for class ip_address_memory_usage".
+
 = 1.0.1 =
 * First official release.
 
@@ -91,8 +95,8 @@ Of course we do. That's why we created it. ;-)
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-First official release.
+= 1.0.2 =
+Included info about Server Operating System and stability improvement.
 
 == Contact ==
 
