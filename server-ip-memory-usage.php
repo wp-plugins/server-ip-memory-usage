@@ -4,7 +4,7 @@
 	Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=server-ip-memory-usage-plugin
 	Description: Show the memory limit, current memory usage and IP address in the admin footer.
 	Version: 1.0.3
-    Author: Apasionados, Apasionados del Marketing, Nunsys
+    Author: Apasionados, Apasionados del Marketing
     Author URI: http://apasionados.es
 
     This program is free software; you can redistribute it and/or modify
