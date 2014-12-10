@@ -1,28 +1,29 @@
 <?php
 /*
-	Plugin Name: Server IP & Memory Usage Display
-	Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=server-ip-memory-usage-plugin
-	Description: Show the memory limit, current memory usage and IP address in the admin footer.
-	Version: 1.0.1
-    Author: Apasionados, Apasionados del Marketing, Nunsys
-    Author URI: http://apasionados.es
+Plugin Name: Server IP & Memory Usage Display
+Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=server-ip-memory-usage-plugin
+Description: Show the memory limit, current memory usage and IP address in the admin footer.
+Version: 1.0.3
+Author: Apasionados, Apasionados del Marketing
+Author URI: http://apasionados.es
+Text Domain: server-ip-memory-usage
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
+	$plugin_header_translate = array( __('Server IP & Memory Usage Display', 'server-ip-memory-usage'), __('Show the memory limit, current memory usage and IP address in the admin footer.', 'server-ip-memory-usage') );
 
 if ( is_admin() ) {	
 
@@ -31,20 +32,13 @@ if ( is_admin() ) {
 		var $memory = false;
 		var $server_ip_address = false;
 
-	
-
 		function ip_address_memory_usage() {
-			return $this->__construct();
-		}
-
-		function __construct() {
 			add_action( 'admin_init', 'ipmem_load_language' );
 			function ipmem_load_language() {
 				load_plugin_textdomain( 'server-ip-memory-usage', false,  dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 			}	
             add_action( 'init', array (&$this, 'check_limit') );
 			add_filter( 'admin_footer_text', array (&$this, 'add_footer') );
-
 			$this->memory = array();					
 		}
         
