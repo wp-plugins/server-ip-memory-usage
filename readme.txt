@@ -4,8 +4,8 @@ Donate link: http://apasionados.es/
 Author URI: http://apasionados.es/
 Tags: memory, memory-limit, ip, ips, admin, adress, php, server, info
 Requires at least: 3.0.1
-Tested up to: 4.0.1
-Stable tag: 1.0.3
+Tested up to: 4.3.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,9 @@ Of course we do. That's why we created it. ;-)
 
 == Changelog ==
 
+= 1.1.0 =
+* Changes for compatibility with PHP 7. Changed "function ip_address_memory_usage() {" to "public function __construct() {". Thanks to Sybre Waaijer for the fix.
+
 = 1.0.3 =
 * Removed call to __construct() which caused problems on some systems: ERROR "Strict Standards: Redefining already defined constructor for class ip_address_memory_usage in /home/---/public_html/wp-content/plugins/server-ip-memory-usage/server-ip-memory-usage.php on line 40)".
 
@@ -98,8 +101,8 @@ Of course we do. That's why we created it. ;-)
 
 == Upgrade Notice ==
 
-= 1.0.3 =
-Stability improvement.
+= 1.1.0 =
+Compatibility with PHP 7.
 
 == Contact ==
 
