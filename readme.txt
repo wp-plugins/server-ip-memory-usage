@@ -1,11 +1,11 @@
 === Server IP & Memory Usage Display ===
-Contributors: apasionados, nunsys
+Contributors: apasionados
 Donate link: http://apasionados.es/
 Author URI: http://apasionados.es/
 Tags: memory, memory-limit, ip, ips, admin, adress, php, server, info
 Requires at least: 3.0.1
-Tested up to: 3.7.0
-Stable tag: 1.0.1
+Tested up to: 4.3.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,13 +13,13 @@ Show the memory limit, current memory usage and IP address in the admin footer.
 
 == Description ==
 
-This plugin displays the memory limit, current memory usage, IP address and PHP version in the admin footer.
+This plugin displays the memory limit, current memory usage, WordPress Memory Limit, IP address and PHP version in the admin footer.
 
 There are four features we love:
 
 1) You can easily see in the admin footer the IP where this WordPress installation is running. Very useful if you have many WordPress installations across several servers and IP addresses.
 
-2) The memory usage and total available memory to the WordPress installation is shown in the admin footer. If memory usage is over 75% the percentage is shown in a light red and if the memory usage is over 90% the percentage is shown in red. So you can allways control with one look if there is enough memory available or if action has to be taken.
+2) The memory usage and total available memory to the WordPress installation is shown in the admin footer. If memory usage is over 75% the percentage is shown in a light red and if the memory usage is over 90% the percentage is shown in red. So you can allways control with one look if there is enough memory available or if action has to be taken. It also displays the WordPress memory limit to give you more information.
 
 3) Besides the IP address and the memory you can also see the PHP version and the type of Operating System where it's running.
 
@@ -27,7 +27,7 @@ There are four features we love:
 
 = What can I do with this plugin? =
 
-This plugin displays the total memory, used memory, percentage of used memory, the IP address and the PHP version in the admin footer.
+This plugin displays the total memory, used memory, percentage of used memory, WP memory limit, the IP address and the PHP version in the admin footer.
 
 = What ideas is this plugin based on? =
 
@@ -80,6 +80,19 @@ Of course we do. That's why we created it. ;-)
 
 == Changelog ==
 
+= 1.2.0 =
+* Added display of WordPress Memory Limit information (parameter WP_MEMORY_LIMIT of wp-config.php). You can set this parameter in wp-config.php by adding this line: *define( 'WP_MEMORY_LIMIT', '768M' );* and replacing 768M with the memory limit you want to set.
+
+= 1.1.0 =
+* Changes for compatibility with PHP 7. Changed "function ip_address_memory_usage() {" to "public function __construct() {". Thanks to Sybre Waaijer for the fix.
+
+= 1.0.3 =
+* Removed call to __construct() which caused problems on some systems: ERROR "Strict Standards: Redefining already defined constructor for class ip_address_memory_usage in /home/---/public_html/wp-content/plugins/server-ip-memory-usage/server-ip-memory-usage.php on line 40)".
+
+= 1.0.2 =
+* Included info about Server Operating System
+* Changed class name to c_ip_address_memory_usage to avoid error on some systems: "Redefining already defined constructor for class ip_address_memory_usage".
+
 = 1.0.1 =
 * First official release.
 
@@ -91,8 +104,8 @@ Of course we do. That's why we created it. ;-)
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-First official release.
+= 1.2.0 =
+* Added display of WordPress Memory Limit information (parameter WP_MEMORY_LIMIT of wp-config.php).
 
 == Contact ==
 
